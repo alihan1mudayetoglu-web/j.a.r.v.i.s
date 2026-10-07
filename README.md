@@ -1,118 +1,274 @@
-          J.A.R.V.I.S  Windows — Kurulum Rehberi        
+🤖 J.A.R.V.I.S Windows
 
-╔══════════════════════════════════════════════════════════╗
-║           J.A.R.V.I.S  Windows — Kurulum Rehberi        ║
-╚══════════════════════════════════════════════════════════╝
+Windows için geliştirilmiş, Gemini AI destekli sesli asistan.
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-ADIM 1 — Python 3.12 Kur
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-Tarayıcıdan şu adrese git:
-  https://www.python.org/downloads/release/python-3128/
+J.A.R.V.I.S; sesli komutlarla uygulama açma, hava durumu görüntüleme, sistem bilgilerini kontrol etme, YouTube/Spotify kullanma ve daha birçok işlemi gerçekleştirebilir.
 
-Sayfanın en altında "Windows installer (64-bit)" linkine tıkla.
+⸻
+
+📋 Gereksinimler
+
+* Windows 10 / 11
+* Python 3.12
+* Visual Studio Code
+* Gemini API Key
+* Mikrofon
+* İnternet bağlantısı
+
+Not: Python 3.13 veya 3.14 bilgisayarınızda kuruluysa kaldırmanız gerekmez. Python 3.12 ile birlikte kullanılabilir.
+
+⸻
+
+🚀 Kurulum
+
+1. Python 3.12 Kur
+
+Python 3.12.8’i aşağıdaki adresten indirin:
+
+Python 3.12.8 İndir
+
+Sayfanın en altında:
+
+Windows installer (64-bit)
+
+bağlantısına tıklayın.
 
 Kurulum sırasında:
-  → En alttaki "Add python.exe to PATH" kutusunu İŞARETLE
-  → "Install Now" a tıkla
 
-Kontrol etmek için terminale yaz:
-  py -3.12 --version
-  (Python 3.12.x çıkıyorsa tamam)
+1. Add python.exe to PATH seçeneğini işaretleyin.
+2. Install Now butonuna tıklayın.
 
-NOT: Python 3.13 veya 3.14 varsa silmene gerek yok,
-     ikisi bir arada çalışabilir.
+Kurulum tamamlandıktan sonra Terminal / CMD açıp kontrol edin:
 
+py -3.12 --version
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-ADIM 2 — VS Code Kur
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-Tarayıcıdan şu adrese git:
-  https://code.visualstudio.com
+Şuna benzer bir çıktı almanız gerekir:
 
-"Download for Windows" butonuna tıkla, kurulumu çalıştır.
+Python 3.12.x
 
-Kurulum bitince VS Code'u aç:
-  → Sol taraftaki Extensions ikonuna tıkla (Ctrl+Shift+X)
-  → "Python" yaz
-  → Microsoft'un Python eklentisini kur
+⸻
 
+2. Visual Studio Code Kur
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-ADIM 3 — Projeyi VS Code'da Aç
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-VS Code'da:
-  File → Open Folder → jarvis-windows klasörünü seç
+Visual Studio Code uygulamasını indirin ve kurun.
 
+VS Code’u açtıktan sonra:
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-ADIM 4 — Paketleri Kur
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-VS Code'da terminali aç (Ctrl+J) ve şunu yapıştır:
+1. Sol taraftaki Extensions bölümüne girin.
+2. Ctrl + Shift + X kısayolunu da kullanabilirsiniz.
+3. Arama bölümüne Python yazın.
+4. Microsoft tarafından yayınlanan Python eklentisini kurun.
 
-1:
+⸻
+
+3. Projeyi VS Code’da Aç
+
+VS Code içerisinde:
+
+File → Open Folder
+
+seçeneğine tıklayın.
+
+Ardından:
+
+jarvis-windows
+
+klasörünü seçin.
+
+⸻
+
+📦 4. Gerekli Paketleri Kur
+
+VS Code içerisinde terminali açın:
+
+Ctrl + J
+
+Ardından aşağıdaki komutu çalıştırın:
+
 python -m pip install google-genai psutil Pillow requests pyperclip mss SpeechRecognition
-İlk kod çaluşmazsa alternatif versiyonu: py -3.12 -m pip install google-genai psutil Pillow requests pyperclip mss SpeechRecognition PyAudio
 
-Kurulum birkaç dakika sürebilir, bekle.
+Eğer bu komut çalışmazsa:
 
-2:
+py -3.12 -m pip install google-genai psutil Pillow requests pyperclip mss SpeechRecognition PyAudio
+
+Kurulum birkaç dakika sürebilir. İşlem tamamlanana kadar terminali kapatmayın.
+
+PyAudio
+
+Önce:
+
 python -m pip install pipwin
 
-3:
+Ardından:
+
 python -m pipwin install pyaudio
-3. Kod hata verirse bir sonraki aşamaya geçip çalıştırmayı deneyin.
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-ADIM 5 — API Anahtarını Al
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-Ücretsiz Gemini API anahtarı almak için:
-  https://aistudio.google.com → Get API Key → Create API Key
+Eğer pipwin ile kurulum hata verirse doğrudan şunu deneyin:
 
-API anahtarını kodu çalıştırdıktan sonra gelen kısma yazacaksın
+py -3.12 -m pip install PyAudio
 
+⸻
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-ADIM 6 — Çalıştır
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-Terminale şunu yaz:
-  py -3.12 main.py
+🔑 5. Gemini API Key Al
 
-Veya F5 tuşuna bas (otomatik Python 3.12 ile çalışır).
+J.A.R.V.I.S’in Gemini AI özelliklerini kullanabilmesi için bir Gemini API anahtarına ihtiyacınız vardır.
 
-JARVIS penceresi açılırsa kurulum tamamdır!
+Google AI Studio adresine gidin.
 
-API anahtarını girip kaydet!
+Ardından:
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-SIK KARŞILAŞILAN HATALAR
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-"pip is not recognized"
-  → pip yerine: python -m pip kullan
+Get API Key
+      ↓
+Create API Key
 
-"No module named 'pyaudio'"
-  → py -3.12 ile çalıştır, py -3.14 ile değil
+seçeneklerini kullanarak API anahtarınızı oluşturun.
 
-PyAudio kurulumu hata verdi
-  → Python 3.12 kullandığından emin ol (py -3.12 --version)
-  → Sonra: py -3.12 -m pip install PyAudio
+⚠️ API anahtarınızı GitHub’a yüklemeyin!
 
-"No module named 'xxx'"
-  → py -3.12 -m pip install xxx
+API anahtarınızı main.py, README veya başka bir herkese açık dosyanın içine doğrudan yazmayın.
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-ÖZELLİKLER — Windows'ta Ne Çalışır?
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-✅ Sesli konuşma (Gemini AI)
-✅ Uygulama açma
-✅ Hava durumu
-✅ Sistem bilgisi (CPU, RAM, disk, pil)
-✅ Browser kontrolü
-✅ YouTube arama ve oynatma
-✅ Spotify
-✅ WhatsApp (Desktop + Web)
-✅ Ekran analizi
-✅ Çift alkış ile uyanma
-⚠️  Takvim → Google Calendar açılır
-⚠️  Hatırlatıcılar → Microsoft To-Do açılır
-⚠️  Apple Music → YouTube'a yönlendirir
+⸻
+
+▶️ 6. J.A.R.V.I.S’i Çalıştır
+
+VS Code terminalinde proje klasörünün içerisinde:
+
+py -3.12 main.py
+
+komutunu çalıştırın.
+
+Alternatif olarak VS Code içerisinden:
+
+F5
+
+tuşuna basabilirsiniz.
+
+J.A.R.V.I.S penceresi açıldığında kurulum tamamlanmıştır.
+
+Ardından uygulamanın istediği bölüme Gemini API Key bilginizi girin.
+
+⸻
+
+🛠️ Sık Karşılaşılan Hatalar
+
+pip is not recognized
+
+pip yerine:
+
+python -m pip
+
+kullanın.
+
+Örneğin:
+
+python -m pip install requests
+
+⸻
+
+No module named 'pyaudio'
+
+Python sürümünüzü kontrol edin:
+
+py -3.12 --version
+
+J.A.R.V.I.S’i Python 3.12 ile çalıştırın:
+
+py -3.12 main.py
+
+Gerekirse:
+
+py -3.12 -m pip install PyAudio
+
+⸻
+
+No module named 'xxx'
+
+Eksik olan paketi Python 3.12 için kurun:
+
+py -3.12 -m pip install xxx
+
+Örneğin:
+
+py -3.12 -m pip install requests
+
+⸻
+
+PyAudio kurulumu başarısız oluyor
+
+Öncelikle Python sürümünüzü kontrol edin:
+
+py -3.12 --version
+
+Ardından:
+
+py -3.12 -m pip install PyAudio
+
+komutunu deneyin.
+
+⸻
+
+✨ Özellikler
+
+Özellik	Durum
+🎙️ Sesli konuşma	✅
+🤖 Gemini AI	✅
+🚀 Uygulama açma	✅
+🌤️ Hava durumu	✅
+💻 Sistem bilgileri	✅
+🧠 CPU / RAM / Disk / Pil bilgisi	✅
+🌐 Browser kontrolü	✅
+▶️ YouTube arama ve oynatma	✅
+🎵 Spotify	✅
+💬 WhatsApp Desktop + Web	✅
+🖥️ Ekran analizi	✅
+👏 Çift alkış ile uyanma	✅
+📅 Google Calendar	⚠️ Tarayıcı üzerinden açılır
+⏰ Hatırlatıcılar	⚠️ Microsoft To-Do açılır
+🍎 Apple Music	⚠️ YouTube’a yönlendirir
+
+⸻
+
+📁 Proje Yapısı
+
+Örnek proje yapısı:
+
+jarvis-windows/
+│
+├── main.py
+├── README.md
+├── requirements.txt
+└── ...
+
+⸻
+
+🔐 Güvenlik
+
+Gemini API Key’inizi kesinlikle GitHub repository’sine yüklemeyin.
+
+API anahtarını kod içerisinde sabit olarak tutmak yerine ortam değişkeni veya .env dosyası kullanmanız önerilir.
+
+Örneğin:
+
+.env
+
+dosyasını .gitignore içerisine ekleyin:
+
+.env
+__pycache__/
+*.pyc
+
+Eğer API anahtarınızı yanlışlıkla GitHub’a yüklediyseniz, anahtarı yalnızca dosyadan silmek yeterli değildir. Google AI Studio üzerinden anahtarı iptal edip yeni bir anahtar oluşturun.
+
+⸻
+
+📄 Lisans
+
+Bu projenin lisans bilgileri için repository içerisindeki LICENSE dosyasına bakın.
+
+⸻
+
+⭐ Destek
+
+Projeyi faydalı bulduysanız GitHub üzerinde ⭐ Star vermeyi unutmayın!
+
+Katkıda bulunmak, hata bildirmek veya yeni özellik önermek için Issues ve Pull Requests bölümünü kullanabilirsiniz.
